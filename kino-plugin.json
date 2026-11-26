@@ -1,0 +1,451 @@
+{
+  "id": "xuper-pro-todo-ext",
+  "name": "XuperPro Todo Externo",
+  "version": "1.0.0",
+  "apiVersion": 9,
+  "entry": "plugin.js",
+  "icon": "icon.png",
+  "hosts": [
+    "oogoy.f30c96w8.com",
+    "osuhk.m3x8o50te.com",
+    "api.themoviedb.org",
+    "image.tmdb.org"
+  ],
+  "capabilities": [
+    "search",
+    "home",
+    "browse",
+    "episodes",
+    "resolve",
+    "download",
+    "channels",
+    "migrate",
+    "scopedSearch",
+    "events"
+  ],
+  "telemetry": false,
+  "settings": [
+    {
+      "key": "account",
+      "label": "Cuenta",
+      "type": "section",
+      "hint": "Opcional. Sin cuenta se solicita una sesión de invitado directamente a Xuper."
+    },
+    {
+      "key": "email",
+      "label": "Correo electrónico",
+      "type": "text"
+    },
+    {
+      "key": "password",
+      "label": "Contraseña",
+      "type": "password"
+    },
+    {
+      "key": "status",
+      "label": "Estado de sesión",
+      "type": "status"
+    },
+    {
+      "key": "login",
+      "label": "Iniciar sesión",
+      "type": "action"
+    },
+    {
+      "key": "logout",
+      "label": "Cerrar sesión",
+      "type": "action",
+      "confirm": "¿Cerrar sesión de tu cuenta Xuper?"
+    },
+    {
+      "key": "createAccount",
+      "label": "Crear cuenta",
+      "type": "section",
+      "hint": "Correo, Enviar código, código y contraseña, en ese orden."
+    },
+    {
+      "key": "regEmail",
+      "label": "Correo electrónico",
+      "type": "text",
+      "hint": "Donde llega el código: guárdalo y toca Enviar código"
+    },
+    {
+      "key": "sendCode",
+      "label": "Enviar código",
+      "type": "action"
+    },
+    {
+      "key": "verifyCode",
+      "label": "Código de verificación",
+      "type": "text",
+      "hint": "El código que llega a tu correo"
+    },
+    {
+      "key": "regPassword",
+      "label": "Contraseña",
+      "type": "password",
+      "hint": "La de tu cuenta nueva: guárdala y toca Crear cuenta"
+    },
+    {
+      "key": "register",
+      "label": "Crear cuenta",
+      "type": "action"
+    },
+    {
+      "key": "home",
+      "label": "Inicio",
+      "type": "section",
+      "hint": "Una fila con los canales en vivo de tu país al final de Inicio."
+    },
+    {
+      "key": "homeCountry",
+      "label": "Canales en vivo de tu país",
+      "type": "select",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "Ninguno"
+        },
+        {
+          "value": "BO",
+          "label": "Bolivia"
+        },
+        {
+          "value": "CL",
+          "label": "Chile"
+        },
+        {
+          "value": "CO",
+          "label": "Colombia"
+        },
+        {
+          "value": "CR",
+          "label": "Costa Rica"
+        },
+        {
+          "value": "EC",
+          "label": "Ecuador"
+        },
+        {
+          "value": "SV",
+          "label": "El Salvador"
+        },
+        {
+          "value": "ES",
+          "label": "España"
+        },
+        {
+          "value": "US",
+          "label": "Estados Unidos"
+        },
+        {
+          "value": "GT-NI-BZ",
+          "label": "Guatemala, Nicaragua o Belice"
+        },
+        {
+          "value": "HN",
+          "label": "Honduras"
+        },
+        {
+          "value": "MX",
+          "label": "México"
+        },
+        {
+          "value": "PA",
+          "label": "Panamá"
+        },
+        {
+          "value": "PY",
+          "label": "Paraguay"
+        },
+        {
+          "value": "PE",
+          "label": "Perú"
+        },
+        {
+          "value": "PR",
+          "label": "Puerto Rico"
+        },
+        {
+          "value": "DO",
+          "label": "República Dominicana"
+        },
+        {
+          "value": "UY",
+          "label": "Uruguay"
+        },
+        {
+          "value": "VE",
+          "label": "Venezuela"
+        }
+      ]
+    },
+    {
+      "key": "warmSession",
+      "label": "Precargar sesión",
+      "type": "toggle",
+      "default": false,
+      "hint": "Mantener preparada la sesión de este dispositivo al cargar Inicio."
+    }
+  ],
+  "section": {
+    "label": "XuperPro Todo Externo"
+  },
+  "categories": [
+    "movies",
+    "series",
+    "anime",
+    "live"
+  ],
+  "theme": {
+    "accent": "#1E90F8",
+    "onAccent": "#050B2D",
+    "background": "#050B2D",
+    "surface": "#101A45",
+    "highlight": "#8FD0FF"
+  },
+  "streamHosts": "any",
+  "liveStreamHosts": "any",
+  "enhancements": {
+    "14": {
+      "capabilities": [
+        "screen"
+      ],
+      "screen": {
+        "label": "XuperPro",
+        "labelEn": "XuperPro",
+        "icon": "movie",
+        "menuOpens": "screen",
+        "opensFrom": [
+          "menu",
+          "settings"
+        ],
+        "settingsButton": {
+          "label": "Abrir XuperPro",
+          "labelEn": "Open XuperPro"
+        },
+        "settingsIn": "screen"
+      },
+      "settings": [
+        {
+          "key": "account",
+          "label": "Cuenta",
+          "type": "section",
+          "hint": "Opcional. Sin cuenta se solicita una sesión de invitado directamente a Xuper.",
+          "labelEn": "Account",
+          "hintEn": "Optional. Without an account, a guest session is requested directly from Xuper."
+        },
+        {
+          "key": "email",
+          "label": "Correo electrónico",
+          "type": "text",
+          "labelEn": "Email"
+        },
+        {
+          "key": "password",
+          "label": "Contraseña",
+          "type": "password",
+          "labelEn": "Password"
+        },
+        {
+          "key": "status",
+          "label": "Estado de sesión",
+          "type": "status",
+          "labelEn": "Session status"
+        },
+        {
+          "key": "login",
+          "label": "Iniciar sesión",
+          "type": "action",
+          "labelEn": "Sign in"
+        },
+        {
+          "key": "logout",
+          "label": "Cerrar sesión",
+          "type": "action",
+          "confirm": "¿Cerrar sesión de tu cuenta Xuper?",
+          "labelEn": "Sign out",
+          "confirmEn": "Sign out of your account?"
+        },
+        {
+          "key": "createAccount",
+          "label": "Crear cuenta",
+          "type": "section",
+          "hint": "Correo, Enviar código, código y contraseña, en ese orden.",
+          "labelEn": "Create account",
+          "hintEn": "Email, Send code, code and password, in that order."
+        },
+        {
+          "key": "regEmail",
+          "label": "Correo electrónico",
+          "type": "text",
+          "hint": "Donde llega el código: guárdalo y toca Enviar código",
+          "labelEn": "Email",
+          "hintEn": "Where the code arrives: save it and tap Send code"
+        },
+        {
+          "key": "sendCode",
+          "label": "Enviar código",
+          "type": "action",
+          "labelEn": "Send code"
+        },
+        {
+          "key": "verifyCode",
+          "label": "Código de verificación",
+          "type": "text",
+          "hint": "El código que llega a tu correo",
+          "labelEn": "Verification code",
+          "hintEn": "The code that arrives in your email"
+        },
+        {
+          "key": "regPassword",
+          "label": "Contraseña",
+          "type": "password",
+          "hint": "La de tu cuenta nueva: guárdala y toca Crear cuenta",
+          "labelEn": "Password",
+          "hintEn": "The one for your new account: save it and tap Create account"
+        },
+        {
+          "key": "register",
+          "label": "Crear cuenta",
+          "type": "action",
+          "labelEn": "Create account"
+        },
+        {
+          "key": "home",
+          "label": "Inicio",
+          "type": "section",
+          "hint": "Una fila con los canales en vivo de tu país al final de Inicio.",
+          "labelEn": "Home",
+          "hintEn": "A row with your country's live channels at the end of Home."
+        },
+        {
+          "key": "homeCountry",
+          "label": "Canales en vivo de tu país",
+          "type": "select",
+          "default": "none",
+          "options": [
+            {
+              "value": "none",
+              "label": "Ninguno",
+              "labelEn": "None"
+            },
+            {
+              "value": "BO",
+              "label": "Bolivia",
+              "labelEn": "Bolivia"
+            },
+            {
+              "value": "CL",
+              "label": "Chile",
+              "labelEn": "Chile"
+            },
+            {
+              "value": "CO",
+              "label": "Colombia",
+              "labelEn": "Colombia"
+            },
+            {
+              "value": "CR",
+              "label": "Costa Rica",
+              "labelEn": "Costa Rica"
+            },
+            {
+              "value": "EC",
+              "label": "Ecuador",
+              "labelEn": "Ecuador"
+            },
+            {
+              "value": "SV",
+              "label": "El Salvador",
+              "labelEn": "El Salvador"
+            },
+            {
+              "value": "ES",
+              "label": "España",
+              "labelEn": "Spain"
+            },
+            {
+              "value": "US",
+              "label": "Estados Unidos",
+              "labelEn": "United States"
+            },
+            {
+              "value": "GT-NI-BZ",
+              "label": "Guatemala, Nicaragua o Belice",
+              "labelEn": "Guatemala, Nicaragua or Belize"
+            },
+            {
+              "value": "HN",
+              "label": "Honduras",
+              "labelEn": "Honduras"
+            },
+            {
+              "value": "MX",
+              "label": "México",
+              "labelEn": "Mexico"
+            },
+            {
+              "value": "PA",
+              "label": "Panamá",
+              "labelEn": "Panama"
+            },
+            {
+              "value": "PY",
+              "label": "Paraguay",
+              "labelEn": "Paraguay"
+            },
+            {
+              "value": "PE",
+              "label": "Perú",
+              "labelEn": "Peru"
+            },
+            {
+              "value": "PR",
+              "label": "Puerto Rico",
+              "labelEn": "Puerto Rico"
+            },
+            {
+              "value": "DO",
+              "label": "República Dominicana",
+              "labelEn": "Dominican Republic"
+            },
+            {
+              "value": "UY",
+              "label": "Uruguay",
+              "labelEn": "Uruguay"
+            },
+            {
+              "value": "VE",
+              "label": "Venezuela",
+              "labelEn": "Venezuela"
+            }
+          ],
+          "labelEn": "Live channels from your country"
+        },
+        {
+          "key": "warmSession",
+          "label": "Precargar sesión",
+          "type": "toggle",
+          "default": false,
+          "hint": "Mantener preparada la sesión de este dispositivo al cargar Inicio.",
+          "labelEn": "Preload session",
+          "hintEn": "Keep this device session ready while loading Home."
+        }
+      ]
+    },
+    "19": {
+      "capabilities": [
+        "screen"
+      ]
+    }
+  },
+  "secrets": {
+    "magisKey": {
+      "seal": "kino-sealed:v1:cPVXeHwxwKFlLTl9yP_XZSX64YDMys629x7qOYPCPUXDSzr9mh80g0uDSAlcx_lpTbHw06_-cCHcAcBMiHKdX4SUXL0DBvDSBlHWpATzr06vu2RNCxwQ6L3gYcAiK6bVGTgjI8mU6jWq-c3B",
+      "use": "cipher-key",
+      "encoding": "hex"
+    }
+  }
+}
